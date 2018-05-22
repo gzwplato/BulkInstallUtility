@@ -1,0 +1,61 @@
+object FormPopup: TFormPopup
+  Left = 0
+  Height = 193
+  Top = 0
+  Width = 442
+  ActiveControl = LabeledEdit2
+  Caption = 'FormRename'
+  ClientHeight = 193
+  ClientWidth = 442
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  Visible = False
+  object LabeledEdit1: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 40
+    Width = 408
+    AutoSize = False
+    Color = clInfoBk
+    EditLabel.AnchorSideLeft.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Control = LabeledEdit1
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit1
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 22
+    EditLabel.Width = 408
+    EditLabel.Caption = 'Improper Filename in Library, should be: ''file name 0.0.0.exe'':'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 104
+    Width = 408
+    EditLabel.AnchorSideLeft.Control = LabeledEdit2
+    EditLabel.AnchorSideRight.Control = LabeledEdit2
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = LabeledEdit2
+    EditLabel.Left = 16
+    EditLabel.Height = 15
+    EditLabel.Top = 86
+    EditLabel.Width = 408
+    EditLabel.Caption = 'Rename to:'
+    EditLabel.ParentColor = False
+    TabOrder = 1
+    OnKeyDown = LabeledEdit2KeyDown
+  end
+  object ButtonOK: TButton
+    Left = 368
+    Height = 25
+    Top = 152
+    Width = 54
+    Caption = 'OK'
+    OnClick = ButtonOKClick
+    TabOrder = 2
+  end
+end
