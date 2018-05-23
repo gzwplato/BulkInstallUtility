@@ -18,7 +18,8 @@ Click to jump to that section, press Home to return to the top:
 * Quickly install your entire software library 
 after new Windows OS install
 * Easy download and update of software versions from www.Softpedia.com
-* This utlity is available in both 32 and 64 bit versions
+* This utlity was developed using Free Pascal and the Lazarus IDE
+* Available in both 32 and 64 bit versions
 
 ## Design Principles
 * Managing software versions should be quick and easy, not a full-time job
