@@ -116,7 +116,7 @@ I have come to the realization that I would rather just manually install each so
 
 ### Development Tools
 
-This utility was developed using Lazarus IDE version 1.8.2 with Free Pascal version 3.0.4.  It has been test on both 32 and 64 bit versions of WinXP, Win7, and Win10 using Virtualbox.
+This utility was developed using the Lazarus IDE version 1.8.2 with Free Pascal version 3.0.4.  It has been tested on both 32 and 64 bit versions of WinXP, Win7, and Win10 using Virtualbox.
 
 ### Donations
 
