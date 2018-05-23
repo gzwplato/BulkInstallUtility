@@ -34,7 +34,7 @@ after new Windows OS install
 ## Usage
 The bulk software library will be shown in a grid, see the screen shot below.
 
-![BulkInstallUtility](https://raw.githubusercontent.com/jasc2v8/BulkInstallUtility/master/BulkInstallUtility/Resources/BulkInstallUtilityContextMenu.png)
+![BulkInstallUtility](https://raw.githubusercontent.com/jasc2v8/BulkInstallUtility/master/BulkInstallUtility/BulkInstallUtilityContextMenu.png)
 
 ### *Main menu options:*
 * File
