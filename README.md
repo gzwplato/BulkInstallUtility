@@ -9,9 +9,9 @@ Bulk software installation manager for Windows
 ## Table of Contents
 Click to jump to that section, press Home to return to the top:
 * [Features](#features)
-* [Design Principles](#Design-Principles)
-* [Installation](#Installation)
-* [Usage](#Usage)
+* [Design Principles](#design-principles)
+* [Installation](#installation)
+* [Usage](#usage)
 * [Design Notes](#design-notes)
 
 ## Features
