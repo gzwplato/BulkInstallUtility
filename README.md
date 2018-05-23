@@ -12,7 +12,7 @@ Click to jump to that section, press Home to return to the top:
 * [Design Principles](#Design-Principles)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Design Notes](#Design-Notes)
+* [Design Notes](#design-notes)
 
 ## Features
 * Simple management of your favorite free and paid software versions
@@ -29,7 +29,7 @@ after new Windows OS install
 * Read more below under Design Notes
 
 ## Installation
-* Download a [release version][9] and unzip to a drive
+* Download a release version and unzip to a drive
 * Run BulkInstallUtility.exe
 
 ## Usage
@@ -102,7 +102,6 @@ There are many other types of software that do not contain the project or versio
 Since my Design Principles are to make it "quick and easy", the filename convention for the Bulk Install Utility the filename convention is 'file name 0.0.0.exe' where 'file name' is the name of the product with spaces, and the '0.0.0' is the version as documented on www.SoftPedia.com.
 
 This is the quickest and easiest method for the user to know what version is in their software library, and when to update that version.
-
 
 ### Manual Software Install
 
