@@ -1,18 +1,17 @@
 # Bulk Install Utility
-[![Build status](https://ci.appveyor.com/api/projects/status/jkuuth039vioms74?svg=true)](https://ci.appveyor.com/project/nea/markdownviewerplusplus)
 [![GitHub license](https://img.shields.io/github/license/nea/MarkdownViewerPlusPlus.svg)](https://github.com/nea/MarkdownViewerPlusPlus/blob/master/LICENSE.md)
-[![GitHub (pre-)release](https://img.shields.io/badge/release-0.8.2-yellow.svg)](https://github.com/nea/MarkdownViewerPlusPlus/releases/tag/0.8.2)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/insanitydesign)
+[![GitHub (pre-)release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/nea/MarkdownViewerPlusPlus/releases/tag/1.0.0)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/JimDreherHome)
 
 Bulk software installation manager for Windows
 
 ## Table of Contents
 Click to jump to that section, press Home to return to the top:
 * [Features](#features)
-* [Design Principles](#Design-Principles)
-* [Installation](#Installation)
-* [Usage](#Usage)
-* [Design Notes](#Design-Notes)
+* [Design Principles](#design-principles)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Design Notes](#design-notes)
 
 ## Features
 * Simple management of your favorite free and paid software versions
@@ -29,7 +28,7 @@ after new Windows OS install
 * Read more below under Design Notes
 
 ## Installation
-* Download a [release version][9] and unzip to a drive
+* Download a release version and unzip to a drive
 * Run BulkInstallUtility.exe
 
 ## Usage
@@ -103,7 +102,6 @@ Since my Design Principles are to make it "quick and easy", the filename convent
 
 This is the quickest and easiest method for the user to know what version is in their software library, and when to update that version.
 
-
 ### Manual Software Install
 
 I use a lot of freeware, and I'm generous in supporting the distributors via PayPal.  However, many distributers now include add-ons that are optionally installed with the freeware.  Some are upfront about it, but others do rather "sneaky" things to trick you into installing the add-ons.  For example, games toolbars, trial-ware, ad-ware, and other various things I don't want on my computer.
@@ -112,16 +110,3 @@ During development, I reached a decision point. Do I design the Bulk Install Uti
 
 I have come to the realization that I would rather just manually install each software title rather than expend a huge amount of effort setting up a sient install script that will change over time. See my first design principle, "Managing software versions should be quick and easy, not a full-time job."
 
-  [1]: http://www.insanitydesign.com/
-  [2]: https://github.com/kbilsted/NotepadPlusPlusPluginPack.Net
-  [3]: https://github.com/lunet-io/markdig
-  [4]: http://spec.commonmark.org/0.28/
-  [5]: http://www.pdfsharp.net/
-  [6]: https://htmlrenderer.codeplex.com/
-  [7]: http://fontawesome.io/
-  [8]: https://github.com/dcurtis/markdown-mark
-  [9]: https://github.com/nea/MarkdownViewerPlusPlus/releases
-  [10]: https://github.com/nea/MarkdownViewerPlusPlus/wiki/Version-History
-  [11]: https://github.com/vvvv/SVG
-  [12]: https://github.com/Edditoria/markdown-plus-plus
-  [13]: https://bruderste.in/npp/pm/
