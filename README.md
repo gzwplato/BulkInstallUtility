@@ -35,7 +35,7 @@ after new Windows OS install
 ## Usage
 The bulk software library will be shown in a grid, see the screen shot below.
 
-![alt text](BulkInstallUtilityContextMenu.png "Right-Click Context Menu")
+![BulkInstallUtility](res/BulkInstallUtilityContextMenu.png "Right-Click Context Menu")
 
 ### *Main menu options:*
 * File
