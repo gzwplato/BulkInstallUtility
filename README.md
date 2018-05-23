@@ -12,13 +12,14 @@ Click to jump to that section, press Home to return to the top:
 * [Installation](#installation)
 * [Usage](#usage)
 * [Design Notes](#design-notes)
+* [Development Tools](#development-tools)
+* [Donations](#donations)
 
 ## Features
 * Simple management of your favorite free and paid software versions
 * Quickly install your entire software library 
 after new Windows OS install
 * Easy download and update of software versions from www.Softpedia.com
-* This utlity was developed using Free Pascal and the Lazarus IDE
 * Available in both 32 and 64 bit versions
 
 ## Design Principles
@@ -112,4 +113,14 @@ I use a lot of freeware, and I'm generous in supporting the distributors via Pay
 During development, I reached a decision point. Do I design the Bulk Install Utility to silently install each product, and somehow avoid the unwanted add-ons?  Or, do I just manually install and learn to avoid the unwanted add-ons?
 
 I have come to the realization that I would rather just manually install each software title rather than expend a huge amount of effort setting up a sient install script that will change over time. See my first design principle, "Managing software versions should be quick and easy, not a full-time job."
+
+### Development Tools
+
+This utility was developed using Lazarus IDE version 1.8.2 with Free Pascal version 3.0.4.  It has been test on both 32 and 64 bit versions of WinXP, Win7, and Win10 using Virtualbox.
+
+### Donations
+
+If this utility is useful, or if the source code helps you in some way, then a small donation would be appreciated.  Just click on the "donation" button above.
+
+Your donation is not tax deductible, but will be used to help promote freeware from myself and other software authors.  
 
