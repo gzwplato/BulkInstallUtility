@@ -1,5 +1,4 @@
 # Bulk Install Utility
-[![Build status](https://ci.appveyor.com/api/projects/status/jkuuth039vioms74?svg=true)](https://ci.appveyor.com/project/nea/markdownviewerplusplus)
 [![GitHub license](https://img.shields.io/github/license/nea/MarkdownViewerPlusPlus.svg)](https://github.com/nea/MarkdownViewerPlusPlus/blob/master/LICENSE.md)
 [![GitHub (pre-)release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/nea/MarkdownViewerPlusPlus/releases/tag/1.0.0)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/JimDreherHome)
@@ -111,16 +110,3 @@ During development, I reached a decision point. Do I design the Bulk Install Uti
 
 I have come to the realization that I would rather just manually install each software title rather than expend a huge amount of effort setting up a sient install script that will change over time. See my first design principle, "Managing software versions should be quick and easy, not a full-time job."
 
-  [1]: http://www.insanitydesign.com/
-  [2]: https://github.com/kbilsted/NotepadPlusPlusPluginPack.Net
-  [3]: https://github.com/lunet-io/markdig
-  [4]: http://spec.commonmark.org/0.28/
-  [5]: http://www.pdfsharp.net/
-  [6]: https://htmlrenderer.codeplex.com/
-  [7]: http://fontawesome.io/
-  [8]: https://github.com/dcurtis/markdown-mark
-  [9]: https://github.com/nea/MarkdownViewerPlusPlus/releases
-  [10]: https://github.com/nea/MarkdownViewerPlusPlus/wiki/Version-History
-  [11]: https://github.com/vvvv/SVG
-  [12]: https://github.com/Edditoria/markdown-plus-plus
-  [13]: https://bruderste.in/npp/pm/
