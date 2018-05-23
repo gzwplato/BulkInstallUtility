@@ -3,8 +3,10 @@
 #
 backup/
 lib/
+zip/
 *.dbg
 *.res
+*.zip
 
 #
 # Uncomment these types if you want even more clean repository. But be careful.

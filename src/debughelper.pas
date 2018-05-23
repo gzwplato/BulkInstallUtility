@@ -28,6 +28,7 @@ type
     procedure Append(sFormat:string; sText: string);
     procedure Append(sFormat:string; sText: string; iNumber: integer); 
     procedure Append(sFormat:string; sText: string; bFlag: boolean);
+    procedure Append(sFormat:string; iNumber: integer);
   private
 
   public
@@ -66,6 +67,11 @@ var
 begin
   sText:=Format(sFormat, [sText,BOOL_TEXT[bFlag]] );
   Memo.Append(sText);
+end;
+
+procedure TDebugForm.Append(sFormat:string; iNumber: integer);
+begin
+  Memo.Append(Format(sFormat, [iNumber] ));
 end;
 
 procedure TDebugForm.ButtonClearClick(Sender: TObject);

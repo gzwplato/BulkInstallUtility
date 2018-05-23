@@ -165,9 +165,9 @@ object frmMain: TfrmMain
     end
     object miHelp: TMenuItem
       Caption = '&Help'
-      object miInstructions: TMenuItem
-        Caption = '&Help Instructions'
-        OnClick = miInstructionsClick
+      object miOnlineHelp: TMenuItem
+        Caption = '&Online Help'
+        OnClick = miOnlineHelpClick
       end
       object miSpacer2: TMenuItem
         Caption = '-'

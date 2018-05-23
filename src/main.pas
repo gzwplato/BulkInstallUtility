@@ -39,7 +39,7 @@ type
     miSpacer1: TMenuItem;
     miFileSave: TMenuItem;
     miHelp: TMenuItem;
-    miInstructions: TMenuItem;
+    miOnlineHelp: TMenuItem;
     miInstall: TMenuItem;
     miAbout: TMenuItem;
     miSpacer2: TMenuItem;
@@ -59,7 +59,7 @@ type
     procedure miFileOpenClick(Sender: TObject);
     procedure miGetOnlineVersionsClick(Sender: TObject);
     procedure miInstallClick(Sender: TObject);
-    procedure miInstructionsClick(Sender: TObject);
+    procedure miOnlineHelpClick(Sender: TObject);
     procedure miQuitClick(Sender: TObject);
     procedure miRenameClick(Sender: TObject);
     procedure miRestartClick(Sender: TObject);
@@ -89,7 +89,10 @@ type
   end;
 
 const
+
+  {set debug flag}
   gDEBUG=false;
+
   colCategory=0; colLibName=1; colInsVer=2;
   colLibVer=3; colUpdVer=4; colOnlineVer=5;
   DS=DirectorySeparator;
@@ -312,8 +315,8 @@ begin
     if AnsiContainsText(aList[i], searchText) then begin
       Result:=true;
       exit;
-      end;
     end;
+  end;
 end;
 
 procedure FindNameGetVersion(
@@ -475,7 +478,7 @@ end;
 procedure TfrmMain.CheckUpdates;
 {if a file is in Updates, but not in a category, prompt to move to a category}
 var
-  i: integer;
+  i, reply: integer;
   spath, sname: string;
 
 begin
@@ -488,22 +491,25 @@ begin
     
     if not IsInList(gLibList, sname) then begin
 
-      frmPopup.Caption:='Check for Updates';
-      frmPopup.LabeledEdit1.EditLabel.Caption:=
-        'Press OK to move this Update to the Library:';
-      frmPopup.LabeledEdit1.Caption:=spath;
-      frmPopup.LabeledEdit2.Hide;
+      reply:=MessageDlg(frmMain.Caption,
+            'Found Update: '+sname+LE+LE+'Move to Library?', mtConfirmation,
+            [mbYes,mbNo,mbCancel],'');
 
-      if (frmPopup.ShowModal=mrCancel) then exit;
+      if reply=mrCancel then exit;
+
+      if reply=mrNo then continue;
 
       SaveDialog.InitialDir:=gLibDir;
-      SaveDialog.FileName:=frmPopup.Edit1Text;
+      SaveDialog.FileName:=spath;
 
       if frmMain.SaveDialog.Execute then begin
+
         FileUtil.CopyFile(spath, SaveDialog.Filename);
         DeleteFile(spath);
         gLibList.Add(SaveDialog.FileName);
+
         gUpdList.Delete(i);
+        gUpdList.Add('');
         gUpdList.Sort;
       end;
     end;
@@ -651,8 +657,8 @@ begin
   else
     gLibDir:=GetCurrentDir;
   
-  if gDEBUG then gLibDir:='d:\BulkLibrary';
-  
+  //if gDEBUG then gLibDir:='d:\BulkLibrary';
+
   gFirstActivation:=true;
 
   gLibList:=TStringList.Create;
@@ -785,14 +791,11 @@ begin
   frmMain.WindowState:=wsNormal
 end;
 
-procedure TfrmMain.miInstructionsClick(Sender: TObject);
+procedure TfrmMain.miOnlineHelpClick(Sender: TObject);
 const
-  HELP_FILE='BulkInstallUtilityManual.pdf';
+  URL='https://github.com/jasc2v8/BulkInstallUtility/blob/master/README.md';
 begin
-  if FileExists(HELP_FILE) then
-    ShellExecute(0,PChar('open'), PChar(HELP_FILE),nil,nil,SW_SHOWNORMAL)
-  else
-    ShowMessage('Help file not found: '+HELP_FILE);
+  OpenURL(URL);
 end;
 
 procedure TfrmMain.miQuitClick(Sender: TObject);
@@ -1100,6 +1103,7 @@ begin
   LoadGrid;
 
   ShowStatus('Ready');
+
 end;
 
 procedure TfrmMain.FormActivate(Sender: TObject);

@@ -44,7 +44,7 @@ The bulk software library will be shown in a grid, see the screen shot below.
 	* Restart - Restart after making changes in the library
 	* Quit - Exits the program
 * Help
-	* Online - This readme file
+	* Online Help - This readme file
 	* About - Information about the utility
 
 Select one or multiple lines (use the mouse and the Ctrl key) then right-click for a context menu of actions.

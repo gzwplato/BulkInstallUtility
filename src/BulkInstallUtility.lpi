@@ -109,7 +109,7 @@
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <DestinationDirectory Value="D:\DEV\Work\pascal\~Archive\BulkInstallUtility_v0.0.150"/>
+      <DestinationDirectory Value="D:\DEV\Work\pascal\~Archive\BulkInstallUtility_v1.0.0"/>
     </PublishOptions>
     <RunParams>
       <local>
