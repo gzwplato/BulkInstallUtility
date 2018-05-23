@@ -58,11 +58,11 @@
 *.dsk
 
 # Delphi history and backups
+backup/
+lib/
 __history/
 __recovery/
 *.~*
-backup/
-lib/
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
 *.stat
