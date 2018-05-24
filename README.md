@@ -1,7 +1,9 @@
 # Bulk Install Utility
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/badge/release-1.0.0-yellow.svg)](https://github.com/jasc2v8/BulkInstallUtility/releases/tag/1.0.0)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/JimDreherHome)
+![Environment](https://img.shields.io/badge/Windows-XP,%20Vista,%207,%208,%2010-brightgreen.svg)
+[![Release](https://img.shields.io/github/release/jasc2v8/BulkInstallUtility.svg)](https://github.com/jasc2v8/BulkInstallUtility/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![TotalDownloads](https://img.shields.io/github/downloads/jasc2v8/BulkInstallUtility/total.svg)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-red.svg)](https://www.paypal.me/JimDreherHome)
 
 Bulk software installation manager for Windows
 
@@ -26,7 +28,7 @@ after new Windows OS install
 * Managing software versions should be quick and easy, not a full-time job
 * Freeware must be manually installed on Windows to avoid unwanted add-ons
 * The executable version cannot be determined on many software titles
-* Therefore, the filename convention is 'file name 0.0.0.exe' where 0.0.0 is the version, e.g. 1.0.255
+* Therefore, the library filename convention is 'file name 0.0.0.exe' where 0.0.0 is the version, e.g. 1.0.255
 * Read more below under Design Notes
 
 ## Installation
@@ -62,8 +64,31 @@ Select one or multiple lines (use the mouse and the Ctrl key) then right-click f
 * Download - Open a broswer window on Softpedia for the file at the location of the first selected line(s)
 * Get Online Version(s) - Get version(s) from Softpedia for the selected line(s)
 
-## Design Notes
+### *Startup Behavior:*
+The Bulk Install Utility will launch and first check the library for valid file names according to the filename convention described above.
 
+Next, the Updates folder is checked. If any files in the Updates folder are not in the library, then the user will be prompted to move the file from the update folder to a folder in the library.
+
+Then, the Windows registry is searched for installed files and versions.
+
+Finally, the library, installed, and update file versions are listed in the grid.
+
+The Online versions will appear after the user clicks 'Get Online Versions(s)' from the (right-click) context menu.
+
+
+### *User Workflow:*
+Typically, as you use a software title, it may auto check for updates. I recommed you take a the time to download the update to the BulkLibrary\Updates folder for update and install at a later time. You can then update your software titles, install, and test at a convenient time that won't interrupt your work.
+
+At any time, you can check for updates with the 'Get Online Version(s)' option from the context menu.  Then you can use the 'Download' option from the context menu to download the software to the Updates folder.
+
+Yes, this process still requires some manual effort, but is less time than trying to manage a script that will change over time.
+
+### *User Workflow:*
+There are many online software hosting sites, but Softpedia arguably has the largest number of software titles available.  Should Softpedia change the way it presents the software on their web pages, then I'll need to update the Utility.  I anticipate this will be a rare occurance. 
+
+If you request online versions in rapid succession, eventually Softpedia will temporarily limit your access.  It this happens, then stop pinging Softpedia and try again the next day. Your access should be restored.
+
+## Design Notes
 I'm a hobbyist and I often build and re-build Windows OS on Virtual machines, or I reinstall Windows for myself, family, and friends.  Each time it has been a burden to locate the software I want to install, research to determine if it is a current version, then download and install each software title individually.
 
 The Bulk Install Utility makes it much easier for me to maintain a core list of software and keep it up to date.  Until there is a centralized software distribution system for Windows, like the ones available for Linux, the Bulk Software Utility can become a valuable addition to your Windows tool set.
