@@ -83,7 +83,7 @@ At any time, you can check for updates with the 'Get Online Version(s)' option f
 
 Yes, this process still requires some manual effort, but is less time than trying to manage a script that will change over time.
 
-### *User Workflow:*
+### *Why Softpedia:*
 There are many online software hosting sites, but Softpedia arguably has the largest number of software titles available.  Should Softpedia change the way it presents the software on their web pages, then I'll need to update the Utility.  I anticipate this will be a rare occurance. 
 
 If you request online versions in rapid succession, eventually Softpedia will temporarily limit your access.  It this happens, then stop pinging Softpedia and try again the next day. Your access should be restored.
