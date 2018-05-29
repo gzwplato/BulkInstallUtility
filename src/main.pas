@@ -2,11 +2,10 @@ unit main;
 
 {$mode objfpc}{$H+}
 
-{todo
-
-  true=-1
-  false=0
-  
+{
+version history:
+1.1.1 enhancements: improve check updates, change to run as administrator
+1.1.0 initial release
 }
 
 interface
@@ -76,8 +75,8 @@ type
     procedure ShowStatus(aString: string);
     procedure GetLibraryList;
     procedure GetInstalledList;
+    procedure CheckFileNames(aList: TStringList);
     procedure CheckUpdates;
-    procedure CheckLibrary;
     procedure LoadGrid;
     procedure UpdateGrid(column: integer);
     procedure GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -479,20 +478,21 @@ procedure TfrmMain.CheckUpdates;
 {if a file is in Updates, but not in a category, prompt to move to a category}
 var
   i, reply: integer;
-  spath, sname: string;
+  spath, sFileName, sLibFileName: string;
 
 begin
-  ShowStatus('Checking Updates...');
 
   for i:=0 to gUpdList.Count-1 do begin
     
     spath:=gUpdList[i];
-    sname:=ExtractLibFileName(spath);
-    
-    if not IsInList(gLibList, sname) then begin
+    sFileName:=ExtractFileName(spath);
+    sLibFileName:=ExtractLibFileName(spath);
 
-      reply:=MessageDlg(frmMain.Caption,
-            'Found Update: '+sname+LE+LE+'Move to Library?', mtConfirmation,
+    if not IsInList(gLibList, sLibFileName) then begin
+
+      reply:=MessageDlg('Check Updates',
+            'Not  in Library: '+sFileName+LE+LE+
+            'Move to Library?', mtConfirmation,
             [mbYes,mbNo,mbCancel],'');
 
       if reply=mrCancel then exit;
@@ -507,6 +507,7 @@ begin
         FileUtil.CopyFile(spath, SaveDialog.Filename);
         DeleteFile(spath);
         gLibList.Add(SaveDialog.FileName);
+        gLibList.Sort;
 
         gUpdList.Delete(i);
         gUpdList.Add('');
@@ -516,19 +517,17 @@ begin
   end;
 end;  
 
-procedure TfrmMain.CheckLibrary;
-{ check files in gLibDir for proper format: "file name 0.0.0" }
+procedure TfrmMain.CheckFileNames(aList: TStringList);
+{ check files for proper format: "file name 0.0.0" }
 var
   i: integer;
   sfile, spath, sdir, sname, sversion, scategory: string;
 
 begin
   
-  ShowStatus('Checking Library Files...');
-
-  for i:=0 to gLibList.Count-1 do begin
+  for i:=0 to aList.Count-1 do begin
     
-    spath:=gLibList[i];
+    spath:=aList[i];
  
     sname:=ExtractLibFileName(spath);
     scategory:=ExtractLibCategory(spath);
@@ -559,9 +558,9 @@ begin
          if not RenameFileUTF8(frmPopup.Edit1Text, frmPopup.Edit2Text) then
            ShowMessage('Error renaming file: '+frmPopup.Edit2Text)
          else begin
-           gLibList.Delete(i);
-           gLibList.Add(frmPopup.Edit2Text);
-           gLibList.Sort;
+           aList.Delete(i);
+           aList.Add(frmPopup.Edit2Text);
+           aList.Sort;
          end;
       end;    
     end;
@@ -1097,8 +1096,9 @@ end;
 procedure TfrmMain.Start;
 begin
   GetLibraryList;
+  CheckFileNames(gLibList);
+  CheckFileNames(gUpdList);
   CheckUpdates;
-  CheckLibrary;
   GetInstalledList;
   LoadGrid;
 
