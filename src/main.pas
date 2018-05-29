@@ -4,8 +4,8 @@ unit main;
 
 {
 version history:
-1.1.1 enhancements: improve check updates, change to run as administrator
-1.1.0 initial release
+1.0.1 enhancements: improve check updates, change to run as administrator
+1.0.0 initial release
 }
 
 interface
