@@ -2,10 +2,10 @@ unit main;
 
 {$mode objfpc}{$H+}
 
-{
-version history:
-1.0.1 enhancements: improve check updates, change to run as administrator
-1.0.0 initial release
+{ version history:
+  1.0.2 fixed memory leaks by freeing buf32 and FileVerInfo
+  1.0.1 enhancements: improve check updates, change to run as administrator
+  1.0.0 initial release
 }
 
 interface
@@ -53,6 +53,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
     procedure miAboutClick(Sender: TObject);
     procedure miDownloadClick(Sender: TObject);
     procedure miFileOpenClick(Sender: TObject);
@@ -472,6 +473,7 @@ begin
   gInsList.Sort;
 
   buf.Free;
+  buf32.Free;
 end;
 
 procedure TfrmMain.CheckUpdates;
@@ -669,6 +671,19 @@ begin
   
 end;
 
+procedure TfrmMain.FormDestroy(Sender: TObject);
+begin
+  if gDEBUG then gLibList.SaveToFile('debug_gLibList.txt');
+  if gDEBUG then gInsList.SaveToFile('debug_gInsList.txt');
+  if gDEBUG then gUpdList.SaveToFile('debug_gUpdList.txt');
+  if gDEBUG then gOnlList.SaveToFile('debug_gOnlist.txt');
+
+  gLibList.Free;
+  gInsList.Free;
+  gUpdList.Free;
+  gOnlList.Free;
+end;
+
 procedure TfrmMain.miAboutClick(Sender: TObject);
 begin
   MessageDlgEx('About',
@@ -742,6 +757,7 @@ begin
         Grid.Columns[ColOnlineVer].Visible:=true;
       end;
     end;
+    FreeAndNil(FindOnlineThread);
 end;
 
 procedure TfrmMain.miInstallClick(Sender: TObject);
@@ -1081,15 +1097,7 @@ begin
     end;
   end;
 
-  if gDEBUG then gLibList.SaveToFile('debug_gLibList.txt');
-  if gDEBUG then gInsList.SaveToFile('debug_gInsList.txt');
-  if gDEBUG then gUpdList.SaveToFile('debug_gUpdList.txt');
-  if gDEBUG then gOnlList.SaveToFile('debug_gOnlist.txt');
 
-  gLibList.Free;
-  gInsList.Free;
-  gUpdList.Free;
-  gOnlList.Free;
 
 end;
 

@@ -1,6 +1,6 @@
 object frmMain: TfrmMain
   Left = 490
-  Height = 640
+  Height = 620
   Top = 203
   Width = 888
   ActiveControl = Grid
@@ -11,8 +11,10 @@ object frmMain: TfrmMain
   OnActivate = FormActivate
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   Position = poDesktopCenter
   LCLVersion = '1.8.2.0'
+  Visible = False
   object Grid: TStringGrid
     Left = 16
     Height = 576
@@ -37,15 +39,15 @@ object frmMain: TfrmMain
       end    
       item
         Title.Caption = 'Installed Version'
-        Width = 167
+        Width = 161
       end    
       item
         Title.Caption = 'LIbrary Version'
-        Width = 167
+        Width = 161
       end    
       item
         Title.Caption = 'Update Version'
-        Width = 167
+        Width = 161
       end    
       item
         Title.Caption = 'Online Version'
@@ -64,16 +66,16 @@ object frmMain: TfrmMain
     ColWidths = (
       100
       250
-      167
-      167
-      167
+      161
+      161
+      161
       0
     )
   end
   object StatusBar: TStatusBar
     Left = 0
     Height = 23
-    Top = 597
+    Top = 577
     Width = 888
     Panels = <>
   end
